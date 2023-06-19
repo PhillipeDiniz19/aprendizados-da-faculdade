@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        
+        <h1>Converter Número do Mês</h1>
+        <label for="numeroMes">Digite o número do mês (1 a 12):</label>
+        <input type="number" id="numeroMes" min="1" max="12">
+        <button onclick="mostrar()">Converter</button>
+        <p id="resultado"></p>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+          var numeroMes = parseInt(document.getElementById("numeroMes").value);
+          var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+          
+          if (numeroMes >= 1 && numeroMes <= 12) {
+            var mesCorrespondente = meses[numeroMes - 1];
+            document.getElementById("resultado").innerHTML = "O número " + numeroMes + " corresponde ao mês de " + mesCorrespondente + ".";
+          } else {
+            document.getElementById("resultado").innerHTML = "Digite um número de mês válido (1 a 12).";
+          }
+        }
+      </script>
+</body>
+</html>

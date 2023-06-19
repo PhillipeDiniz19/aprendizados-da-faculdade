@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+            <form>
+                
+                <label>Digite a primera parte do triangulo:<input type="number" id="Fnum"></label><br/>
+                <label>Digite a segunda parte do triangulo:<input type="number" id="Anum"></label><br/>
+                <label>Digite a terceira parte do triangulo:<input type="text" id="valor"></label><br/>
+                <input type="button" value="Mostrar" onclick="mostrar()">
+            </form>
+
+            <div id="display">...</div>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+           var display = document.getElementById("display")
+           var ladoA = parseInt(document.getElementById("Fnum").value)
+           var ladoB = parseInt(document.getElementById("Anum").value)
+           var ladoC = parseInt(document.getElementById("valor").value)
+           var resultado = ''
+           
+            if (ladoA + ladoB > ladoC && ladoA + ladoC > ladoB && ladoB + ladoC > ladoA) {
+                if (ladoA === ladoB && ladoB === ladoC) {
+                     display.textContent = "Triângulo equilátero";
+                } else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+                    display.textContent = "Triângulo isósceles";
+                } else {
+                    display.textContent = "Triângulo escaleno";
+                }
+            } else {
+                resultadoElement.textContent = "Não é possível formar um triângulo com os valores fornecidos.";
+            }
+        }
+        
+      </script>
+</body>
+</html>

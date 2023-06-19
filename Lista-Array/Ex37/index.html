@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+            <form>
+                <label>Digite seu nome:<input type="text" id="nome"></label><br/>
+                <label>Digite sua idade:<input type="number" id="idade"></label><br/>
+                <label>Digite sua altura: (ex 1.90) <input type="number" id="altura"></label><br/>
+                <label>Qual seu sexo: <input type="radio" name="radioSex" id="sexo" value="Masculino">Masculino
+                       <input type="radio" name="radioSex" id="sexo" value="Feminino">Feminino
+                </label><br/>           
+                <input type="button" value="Mostrar" onclick="mostrar()">
+            </form>
+
+            <div id="display">...</div>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+            var display = document.getElementById("display");
+            var nome = document.getElementById("nome").value
+            var sexo = document.querySelector("input[name='radioSex']:checked").value
+            var idade = parseInt(document.getElementById("idade").value)
+            var altura = Number(document.getElementById("altura").value)
+            var resultado = ''
+
+            if(sexo === 'Masculino' && altura > 1.70 && idade <= 20) {
+                resultado = (72.7 * altura) - 58
+            }else if(sexo === 'Masculino' && altura > 1.70 && idade > 21 && idade < 39) {
+                resultado = (72.7 * altura) - 53
+            }else if(sexo === 'Masculino' && altura > 1.70 && idade >= 40) {
+                resultado = (72.7 * altura) - 45
+            }else if(sexo === 'Masculino' && altura <= 1.70 && idade <= 40) {
+                resultado = (72.7 *  altura) - 50
+            }else if(sexo === 'Masculino' && altura <= 1.70 && idade > 40) {
+                resultado = (72.7 * altura) - 58
+            }else if(sexo === 'Feminino' && altura > 1.50) {
+                resultado = (62.1*altura) - 45
+            }else if(sexo === 'Feminino' && altura <= 1.50 && idade >= 35 || idade < 35) {
+                resultado = (62.1*altura) - 49
+            }
+
+            display.innerHTML = `Seu nome é ${nome} sua idade é ${idade} sua sexualidade é ${sexo} e sua altura é ${altura} e seu peso ideal é ${resultado}`
+
+
+            console.log(nome, sexo, idade, altura)
+            
+            
+        }
+        
+      </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+            <form>
+                <label>Seu Nome:<input type="text" id="nome"></label><br/>
+                <label>Sua Idade:<input type="number" id="idade"></label><br/>
+                <label>Salario:<input type="number" id="salario"></label><br/>
+                <label>
+                Qual seu sexo:    <input type="radio" name="radioSex" id="Msex" value="Masculino" >Masculino 
+                    <input type="radio" name="radioSex" id="Msex"  value="Feminino">Feminino 
+                </label> </br>
+                <input type="button" value="Mostrar" onclick="mostrar()">
+            </form>
+
+            <div id="display"></div>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+            var display = document.getElementById("display");
+            var nome = document.getElementById("nome").value;
+            var idade = Number(document.getElementById("idade").value);
+            var salario = Number(document.getElementById("salario").value);
+            var Msexo = document.querySelector("input[name='radioSex']:checked").value
+            var salF = ''
+
+            if(Msexo === 'Masculino' && idade >= 30) {
+                salF = salario + 100
+            }else if (Msexo === 'Masculino' && idade < 30) {
+                salF = salario + 50
+            } else if (Msexo === 'Feminino' && idade >= 30) {
+                salF = salario + 200
+            } else if (Msexo === 'Feminino' && idade < 30){
+                salF = salario + 80
+            }
+
+            display.innerHTML = `Seu nome ${nome} sua idade ${idade} seu salario ${salF} e seu sexo ${Msexo}`
+            console.log(Msexo)
+        }
+      </script>
+</body>
+</html>

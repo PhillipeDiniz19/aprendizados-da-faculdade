@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+            <form>
+                
+                <label>Digite sua idade nadador(a)<input type="number" id="Fnum"></label><br/>           
+                <input type="button" value="Mostrar" onclick="mostrar()">
+            </form>
+
+            <div id="display">...</div>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+            var display = document.getElementById("display");
+            var idade = parseInt(document.getElementById("Fnum").value);
+            
+            if(idade > 5 && idade <= 7) {
+                display.innerHTML = "Você é (Infantil A = 5 - 7 anos)"
+            }else if (idade >= 8 && idade < 10) {
+                display.innerHTML = "Você é (Infantil B = 8 - 10 anos)"
+            }else if (idade >= 11 && idade < 13) {
+                display.innerHTML = "Você é (Juvenil A = 11 - 13 anos)"
+            }else if (idade >= 14 && idade < 17) {
+                display.innerHTML = "Você é (Juvenil B = 14 - 17 anos)"
+            }else if (idade >= 18 && idade < 25) {
+                display.innerHTML = "Você é (Senior = 18 - 25 anos)"
+            }
+            
+        }
+        
+      </script>
+</body>
+</html>

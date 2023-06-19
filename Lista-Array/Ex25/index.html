@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+
+        }
+    </style>
+</head>
+<body onload="">
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>       
+        <form>
+            <label for="numbers">Insira o primeiro numero:<input type="text" id="numeroUm" name="numbers"></label><br>
+            <label for="numbers">Insira o segundo numero:<input type="text" id="numeroDois" name="numbers"></label><br>
+            <input type="button" value="Mostrar" onclick="Mostrar()">
+        </form>
+    
+        <div id="display"></div>     
+        <div id="maiorMenor"></div> 
+    </section>
+        
+
+    <script>
+          function Mostrar() {
+            var numeroUm = Number(document.getElementById("numeroUm").value);
+            var numeroDois = Number(document.getElementById("numeroDois").value);
+            var display = document.getElementById("display");
+            var maiorMenor = document.getElementById("maiorMenor");
+
+            if(numeroUm == 0 || numeroDois == 0) {
+                alert("Digite um numero valido")
+            } else {
+                if(numeroUm == numeroDois) {
+                    display.innerHTML = `O primeiro numero ${numeroUm} e o segundo numero ${numeroDois} são iguais.`
+                } else if(numeroUm != numeroDois) {
+                    display.innerHTML = `Os numeros são diferentes ${numeroUm} e o ${numeroDois}.`
+                } if(numeroUm > numeroDois) {
+                    maiorMenor.innerHTML = `O numero um é maior = ${numeroUm}`
+                }else {
+                    maiorMenor.innerHTML = `O numero dois é maior = ${numeroDois}`
+                }
+            }
+          }
+
+    </script>
+</body>
+</html>

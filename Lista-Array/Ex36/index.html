@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+            <form>
+                
+                <label>Digite quantos KW/H você gastou:<input type="number" id="Fnum"></label><br/>
+                <label>Qual tipo sua propriedade:<select id="meuSelect">
+                    <option value="Residência">Residência</option>
+                    <option value="Comércio">Comércio</option>
+                    <option value="Indústria">Indústria</option>
+                </select></label><br/>           
+                <input type="button" value="Mostrar" onclick="mostrar()">
+            </form>
+
+            <div id="display">...</div>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+            var display = document.getElementById("display");
+            var preco = Number(document.getElementById("Fnum").value);
+            var tabela = document.querySelector("#meuSelect");
+            var valorSel = tabela.options[tabela.selectedIndex].value;
+            var resultado = ''
+            
+            if(valorSel === 'Residência') {
+                resultado = preco * 0.60
+            }else if(valorSel === 'Comércio') {
+                resultado = preco * 0.48
+            }else if (valorSel === 'Indústria') {
+                resultado = preco * 1.29
+            }
+
+            display.innerHTML = `O valor da conta de energia é: ${resultado}`
+
+            console.log(valorSel)
+            
+        }
+        
+      </script>
+</body>
+</html>

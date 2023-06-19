@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body onload="verificar()">
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        
+        <form id="numberForm">
+            <label for="numbers">Insira os números:</label><br>
+            <input type="text" id="numbers" name="numbers"><br><br>
+            <input type="submit" value="Verificar">
+        </form>
+    
+        <div id="result"></div>     
+    </section>
+        
+
+    <script>
+            document.getElementById("numberForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var numbersInput = document.getElementById("numbers").value;
+            var numbers = numbersInput.split(",");
+
+            var result = document.getElementById("result");
+            result.innerHTML = ""; // Limpa o resultado anterior, se houver
+
+            for (var i = 0; i < numbers.length; i++) {
+                var number = parseFloat(numbers[i]);
+
+                if (number > 0) {
+                    result.innerHTML += number + " é positivo.<br>";
+                } else if (number < 0) {
+                    result.innerHTML += number + " é negativo.<br>";
+                } else {
+                    result.innerHTML += "Zero.<br>";
+                }
+            }
+        });
+    </script>
+
+    </script>
+</body>
+</html>

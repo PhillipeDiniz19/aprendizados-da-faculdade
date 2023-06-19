@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+            <form>
+                
+                <label>Digite o primero valor:<input type="number" id="Fnum"></label><br/>
+                <label>Digite o segundo valor:<input type="number" id="Anum"></label><br/>
+                <label>Digite o operador("+" "-" "*" "/" "%"):<input type="text" id="valor"></label><br/>
+                <input type="button" value="Mostrar" onclick="mostrar()">
+            </form>
+
+            <div id="display">...</div>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+            var display = document.getElementById("display")
+            var priValor = parseFloat(document.getElementById("Fnum").value);
+            var seValor = parseFloat(document.getElementById("Anum").value);
+            var carac = document.getElementById("valor").value;
+            var valorF = ''
+            if(carac === '+') {
+                valorF = priValor + seValor
+            }else if(carac === '-') {
+                valorF = priValor - seValor
+            }else if(carac === '*') {
+                valorF = priValor * seValor
+            }else if(carac === '/') {
+                valorF = priValor / seValor
+            }else if (carac === '%') {
+                valorF = priValor % seValor
+            }else {
+                alert("Operador invalido")
+            }
+            display.innerHTML = `Os valores são ${priValor} e ${seValor} e o resultado é ${valorF}`
+            console.log(priValor, seValor, carac)
+        }
+        
+      </script>
+</body>
+</html>

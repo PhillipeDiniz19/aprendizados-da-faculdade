@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        
+        <form>
+            <label>Escreva um numero(1 a 5):<input type="number" id="numeros"></label> <br/>
+            <input type="button" value="Mostrar" onclick="mostrar()">
+        </form>
+    
+        <div id="display"></div>     
+    </section>
+        
+
+    <script>
+            function mostrar() {
+                var numero = Number(document.getElementById("numeros").value);
+                var display = document.getElementById("display");
+
+                if(numero == 0 || numero > 5) {
+                    alert("Digite um entre 1 e 5 burro!!!")
+                }else {
+                    switch (numero) {
+                        case 1:
+                            display.innerHTML = "Numero um"
+                            break;
+                        case 2:
+                            display.innerHTML = "Numero dois"
+                            break;
+                        case 3:
+                             display.innerHTML = "Numero três"
+                            break;
+                        case 4:
+                            display.innerHTML = "Numero Quatro"
+                            break;
+                        default:
+                            display.innerHTML = "Numero Cinco"
+                    }
+                }
+            }
+    </script>
+</body>
+</html>

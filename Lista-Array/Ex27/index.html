@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        
+        <form>
+            <label>Escreva valor do veiculo: <input type="number" id="numeros"></label> <br/>
+            Selecione o combustivel do carro: <select id="tabela">
+                <option value="Gasolina">Gasolina</option>
+                <option value="Diesel">Diesel</option>
+                <option value="álcool">álcool</option>
+            </select><br/>
+            <input type="button" value="Mostrar" onclick="mostrar()">
+        </form>
+    
+        <div id="display"></div>     
+    </section>
+        
+
+    <script>
+        function mostrar() {
+            var valor = parseFloat(document.getElementById("numeros").value);
+            var tabela = document.getElementById("tabela");
+            var display = document.getElementById("display");
+            var desconto = ''
+
+            if(valor == 0 || valor < 0) {
+                alert("Digite um valor valido.")
+            }else {
+                if(tabela.value === "Gasolina") {
+                    desconto = valor * 0.21
+                }else if(tabela.value === "Diesel") {
+                    desconto = valor * 0.14
+                } else if (tabela.value === "álcool"){
+                    desconto =  valor * 0.25
+                } else {
+                    alert("Selecione um tipo de combustível válido.")
+                }
+            }
+            display.innerHTML = `O valor do desconto é ${desconto.toFixed(2)} e o valor final do carro é ${valor - desconto.toFixed(2)}.`
+        }
+            //alcool 25% // gasolina 21% // diesel 14%
+    </script>
+</body>
+</html>

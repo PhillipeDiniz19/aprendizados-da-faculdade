@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARANGO</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+        }
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+            <form>
+                
+                <label>Digite quantos horas de trabalho:<input type="number" id="Fnum"></label><br/>
+                <label>Coloque o seu nível:<select id="meuSelect">
+                    <option value="ValorUm">Nível 1</option>
+                    <option value="ValorDois">Nível 2</option>
+                    <option value="ValorTres">Nível 3</option>
+                </select></label><br/>           
+                <input type="button" value="Mostrar" onclick="mostrar()">
+            </form>
+
+            <div id="display">...</div>
+    </section>
+        
+
+    <script>
+        function mostrar() {
+            var display = document.getElementById("display");
+            var horas = Number(document.getElementById("Fnum").value);
+            var tabela = document.querySelector("#meuSelect");
+            var valorSel = tabela.options[tabela.selectedIndex].value;
+            var resultado = ''
+            
+            if(valorSel === 'ValorUm') {
+                resultado = horas * 12
+            }else if(valorSel === 'ValorDois') {
+                resultado = horas * 17
+            }else if (valorSel === 'ValorTres') {
+                resultado = horas * 25
+            }
+
+            display.innerHTML = `Os seus ganhos em hora/aula é ${resultado}`
+
+            console.log(valorSel)
+            
+        }
+        
+      </script>
+</body>
+</html>
