@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            
+        }
+        input {
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        
+        <div>
+            <label>Inicio:<input type="number" name="" id="inicio"></label> <br/>
+            <label>Fim:<input type="number" name="" id="fim"></label><br/>
+            <label>Passos:<input type="number" name="" id="passos"></label><br/>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="display">Vamos Contar?
+        </div>
+    </section>
+
+    <script>
+       function verificar() {
+        var inicio = Number(document.getElementById("inicio").value);
+        var fim = Number(document.getElementById("fim").value);
+        var passos = Number(document.getElementById("passos").value);
+        var display = document.getElementById("display");
+        display.innerHTML = ''
+        console.log(inicio)
+        for(let i = inicio; i <= fim; i += passos) {
+            display.innerHTML += `\u{1F449} ${i} `
+        }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="horaDia()">
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        <div id="display">Agora são horas do dia</div>
+        <div id="foto">
+            <img src="manha.jpg" alt="" id="imagem" style="width: 200px; height: 200px; border-radius: 50%; padding-top: 10px;">
+        </div>
+    </section>
+
+    <script>
+        function horaDia() {
+            var display = document.getElementById("display");
+            var img = document.getElementById("imagem");
+            var dia = new Date();
+            //var hora = dia.getHours();
+            var hora = 5   
+            if(hora > 6 && hora <= 13) {
+                img.src = "manha.jpg"
+            }else if (hora >= 14 && hora <= 18) {
+                img.src = "tarde.jpg"
+            }else if(hora >= 19 && hora <= 23) {
+                img.src = "noite.jpg"
+            }else if(hora >= 0 && hora <= 5) {
+                img.src = "madrugada.jpg"
+            }
+            display.innerHTML = `Agora são ${hora} do dia`
+        }
+    </script>
+</body>
+</html>

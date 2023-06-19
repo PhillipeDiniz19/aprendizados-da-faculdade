@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            
+        }
+        input {
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        
+        <div>
+            <label>Numero:<input type="number" name="" id="inicio"></label> 
+            <input type="button" value="Verificar" onclick="verificar()"> <br/>
+            <select name="" id="tabela" size="10"></select>
+        </div>
+        <div id="display">
+        </div>
+    </section>
+
+    <script>
+       function verificar() {
+        var numero = Number(document.getElementById("inicio").value);
+        var tabela = document.getElementById("tabela")
+
+        if(numero == 0) {
+            alert("Digite um numero valido")
+        } else {
+            let n = Number(numero.value)
+            let c = 1
+            tabela.innerHTML = ''
+            for(let i = c; i <= 10; i++) {
+                let item = document.createElement('option');
+                item.text = `${numero} x ${i} = ${numero*i}`
+                tabela.appendChild(item)
+            }
+        }
+       }
+    </script>
+</body>
+</html>

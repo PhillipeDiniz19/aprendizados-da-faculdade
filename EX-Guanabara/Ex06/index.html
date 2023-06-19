@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:  #cecece;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header {
+            text-align: center;
+        }
+
+        section {
+            background-color:aqua;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            
+        }
+        input {
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nome: Phillipe Diniz Cardoso</h1>
+        <h2>Matricula: 23114290078</h2>
+        <h3>Turma: AC11</h3>
+    </header>
+    <section>
+        
+        <div>
+            <label>Numero(entre 1 e 100)<input type="number" name="" id="fnum"></label> 
+            <input type="button" value="Verificar" onclick="verificar()"> <br/>
+            <select name="" id="tabela" size="10"></select> <br/>
+            <input type="button" value="finalizar" onclick="finalizar()">
+        </div>
+        <div id="display">
+        </div>
+    </section>
+
+    <script>
+       
+        var num = document.querySelector('input#fnum');
+        var tabela = document.getElementById("tabela");
+        var display = document.getElementById("display");
+        var valores = []
+
+        function isNumero(n) {
+            if(Number(n) >= 1 && Number(n) <= 100) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        function inLista(n, l) {
+            if(l.indexOf(Number(n)) != -1) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        function verificar() {
+            if(isNumero(num.value) && !inLista(num.value, valores)) {
+                valores.push(Number(num.value))
+                let item = document.createElement('option');
+                item.text = `Valor ${num.value} adicionado`
+                tabela.appendChild(item)
+            } else {
+                window.alert("Valor invalido ou ja encontrado na lista")
+            }
+            num.value = ''
+            num.focus() 
+        }
+
+        function finalizar() {
+            if(valores.length == 0) {
+                alert("Adicione um valor ") 
+            } else {
+                let tot = valores.length
+                let maior = valores[0]
+                let menor = valores[0]
+                let soma = 0
+                let media = 0
+                for(let pos in valores) {
+                    soma += valores[pos]
+                    if(valores[pos] > maior) {
+                        maior = valores[pos]
+                    }if(valores[pos < menor]) {
+                        menor = valores[pos]
+                    }
+                }
+                media = soma /tot
+                display.innerHTML = ''
+                display.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados. <p/>`
+                display.innerHTML += `<p>O maior valor informado foi ${maior} <p/>`
+                display.innerHTML += `<p>O menor valor informado foi ${menor} <p/>`
+                display.innerHTML += `<p>Somando todos valores é ${soma} <p/>`
+                display.innerHTML += `<p>A média dos valores digitados é ${media} <p/>`
+                    
+            }
+        }
+
+       
+    </script>
+</body>
+</html>
