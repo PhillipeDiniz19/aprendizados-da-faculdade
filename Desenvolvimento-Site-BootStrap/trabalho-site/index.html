@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!--CSS BOOTSTRAP--> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!--CSS ICONS BOOTSTRAP-->
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/></svg>
+    <!--CSS MAIN-->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Clinica de estetica</title>
+
+    <!--JavaScript BootStrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+            
+        <nav class="navbar navbar-expand-lg fixed-top bg-primary-color" id="navbar">
+            <div class="container py-3">
+              <a class="navbar-brand" href="#">
+                <img src="img/logoMarca.png" alt="logo header"  />
+
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar-items"
+                aria-controls="navbar-items"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+              <i class="bi bi-list">...</i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbar-items">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Serviços</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Portifólio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                  </li>
+                </ul>
+              </div>
+              <input type="button" value="Agendar" id="button-option">
+            </div>
+          </nav>
+    </header>
+
+    <!--Section Home-->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/imagem1 (1).jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h5>Alogamento de cilios</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/imagem1 (2).jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h5>Sobrancelha</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/imagem1 (2).jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h5>Limpeza de pele</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!--Section Sobre-->
+    <div id="section-sobre">
+      <div class="container" id="featured-container">
+        <div class="col-12">
+          <h2 class="title primary-color">Sobre nosso trabalho</h2>
+          <p class="subtitle secondary-color">
+            Conheça nossos projetos mais desafiadores
+          </p>
+        </div>
+        <div class="col-12" id="featured-images">
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
+              <img src="img/imagem1 (1).jpg" alt="Projeto 1" class="img-fluid" />
+              <div class="banner-content">
+                <p class="secondary-color">Categoria</p>
+                <h3>Nome do Projeto</h3>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <img src="img/imagem1 (2).jpg" alt="Projeto 2" class="img-fluid" />
+              <div class="banner-content">
+                <p class="secondary-color">Categoria</p>
+                <h3>Nome do Projeto</h3>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <img src="img/imagem1 (2).jpg" alt="Projeto 3" class="img-fluid" />
+              <div class="banner-content">
+                <p class="secondary-color">Categoria</p>
+                <h3>Nome do Projeto</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="p-final">Lorem sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVMLorem sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7
+          SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVMLorem sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM</p>
+      </div>
+    </div>
+
+
+    <div id="section-menu">
+        <h1>Serviços</h1>
+        <div class="card" style="width: 18rem; height: 25rem;">
+            <img src="img/exclusivo-alongamento-de-cilios-1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card with stretched link</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="botao stretched-link">Agendar</a>
+            </div>
+          </div><div class="card" style="width: 18rem; height: 25rem;">
+            <img src="img/limpeza-de-pele.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card with stretched link</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="botao stretched-link">Agendar</a>
+            </div>
+          </div><div class="card" style="width: 18rem; height: 25rem;">
+            <img src="img/sobrancelhas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card with stretched link</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="botao stretched-link">Agendar</a>
+            </div>
+          </div>
+
+    <div class="section-portifolio">
+        
+    </div>
+
+
+    <div id="section-contato">
+
+        <h1>FALE CONOSCO</h1>
+        <div class="box-formulario">        
+        
+            <div class="formulario">
+                
+                <div class="title-form">
+                  <h1><i class="icon icon-comments-o"></i> Fale Conosco Agora</h1>
+                </div>
+                <form action="#" method="post">
+                         
+                    <span>
+                        <input type="text" class="input-slide" id="nome" name="nome" placeholder="Nome" autocomplete="off" required=""/>
+                        <label for="nome"> <i class="icon icon-user-outline"></i> </label>
+                    </span>
+                    <span>
+                        <input type="text" class="input-slide" id="email" name="email" placeholder="E-mail" autocomplete="off" required=""/>
+                        <label for="email"> <i class="icon icon-mail-3"></i> </label>
+                    </span>
+                    <span>
+                        <input type="text" class="input-slide" id="assunto" name="assunto" placeholder="Assunto" autocomplete="off" required=""/>
+                        <label for="assunto"> <i class="icon icon-help"></i> </label>
+                    </span>
+                    <span>
+                        <textarea type="text" class="textarea-slide" id="mensagem" name="mensagem" rows="3" placeholder="Mensagem" autocomplete="off" required=""></textarea>
+                        <label for="mensagem"> <i class="icon icon-commenting-o"></i> </label>
+                    </span>
+                    <div class="box-btn">
+                         
+                        <button type="submit" class="btn-envia zoom-shadow">
+                            <i class="icon icon-export"> Enviar</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ <!--Foot-->
+     <!--Inicia Footer-->
+    
+     <div class="footer-diagonal">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <footer class="main_footer container">
+        
+        <div class="content">
+            
+            <div class="colfooter">
+                
+                <h4 class="titleFooter">Menu</h4>
+                
+                <ul>
+                
+                  <li><a href="#" title="Página Inícial">Página Inícial</a></li>
+                  <li><a href="#" title="Sobre a Empresa">Sobre</a></li>
+                  <li><a href="#" title="Galeria de Fotos">Portifólio</a></li>
+                  <li><a href="#" title="Fale Conosco">Fale Conosco</a></li>
+                
+                </ul>
+            
+            </div><!--Col Footer 1-->        
+            
+            <div class="colfooter">
+               
+               <h4 class="titleFooter">Contato</h4>
+               <p><i class="icon icon-mail"></i> contato@seusite.com.br</p>
+               <p><i class="icon icon-phone"></i> 61 90000-0000</p>
+               <p><i class="icon icon-whatsapp"></i> 61 90000-0000</p>
+            
+            </div><!--Col Footer 2-->
+            
+            <div class="colfooter">
+               
+                <h4 class="titleFooter">Redes Sociais</h4>
+                
+                <a href="#" class="redesocial"><span> <i class="icon icon-facebook"></i>facebook</span></a>            
+                <a href="#" class="redesocial"><span> <i class="icon icon-instagram"></i>instagram</span></a>            
+                <a href="#" class="redesocial"><span> <i class="icon icon-twitter"></i>twiiter</span></a>            
+                <a href="#" class="redesocial"><span> <i class="icon icon-pinterest"></i>whatsapp</span></a>  
+            
+            </form>
+            
+            </div><!--Col Footer 3-->
+            
+            <div class="clear"></div>
+        
+        </div><!--Contant-->
+    </footer>
+
+    <!--Fecha Footer-->
+</body>
+</html>
